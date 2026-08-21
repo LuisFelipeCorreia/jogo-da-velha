@@ -1,0 +1,38 @@
+<div class="mario-container">
+  <div class="header">
+    <span class="mario-icon">🍄</span>
+    <div class="title-group">
+      <h1 class="title">SUPER TIC-TAC-TOE</h1>
+      <p class="subtitle">Mario Edition</p>
+    </div>
+  </div>
+
+  <div class="score-board">
+    <div class="player" [class.active]="currentPlayer === 'X' && !winner">
+      <span>MARIO (X)</span>
+      <span>{{ scoreMario }}</span>
+    </div>
+    <div class="player" [class.active]="currentPlayer === 'O' && !winner">
+      <span>ESTRELA (O)</span>
+      <span>{{ scoreBowser }}</span>
+    </div>
+  </div>
+
+  <div class="status-banner">
+    <span *ngIf="winner">🎉 VITORIA DO {{ winner === 'X' ? 'MARIO' : 'ESTRELA' }}!</span>
+    <span *ngIf="isDraw">🍄 EMPATE!</span>
+    <span *ngIf="!winner && !isDraw">TURNO: {{ currentPlayer === 'X' ? 'MARIO' : 'ESTRELA' }}</span>
+  </div>
+
+  <div class="board-grid">
+    <button 
+      *ngFor="let cell of board; let i = index" 
+      class="grid-cell" 
+      (click)="makeMove(i)">
+      <span *ngIf="cell === 'X'">🍄</span>
+      <span *ngIf="cell === 'O'">⭐</span>
+    </button>
+  </div>
+
+  <button class="reset-btn" (click)="resetGame()">REINICIAR</button>
+</div>

@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, #61b5ff 0%, #61b5ff 70%, #51b83d 70%, #51b83d 100%);
+  font-family: 'Press Start 2P', cursive;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Container Branco Estilo Game Boy / Calculadora */
+.mario-container {
+  background: #ffffff;
+  border: 5px solid #1a1a1a;
+  border-radius: 28px;
+  padding: 20px 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  width: 320px;
+  max-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.mario-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.title-group {
+  text-align: left;
+}
+
+.title {
+  font-size: 11px;
+  color: #e52521;
+  margin: 0 0 4px 0;
+}
+
+.subtitle {
+  font-size: 7px;
+  color: #555;
+  margin: 0;
+}
+
+/* Placar visor LCD estilo o display da foto */
+.score-board {
+  background-color: #d2e4c4;
+  border: 3px solid #1a1a1a;
+  border-radius: 8px;
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+
+.player {
+  font-size: 8px;
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.player.active {
+  font-weight: bold;
+  color: #e52521;
+}
+
+.status-banner {
+  font-size: 8px;
+  color: #e52521;
+  min-height: 12px;
+}
+
+/* Tabuleiro 3x3 */
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.grid-cell {
+  aspect-ratio: 1;
+  background-color: #ffffff;
+  border: 3px solid #1a1a1a;
+  border-radius: 12px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition: transform 0.05s ease;
+}
+
+.grid-cell:active {
+  transform: scale(0.95);
+  background-color: #f0f0f0;
+}
+
+/* Botão de Ação Estilo "AC / DEL" */
+.reset-btn {
+  width: 100%;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #e52521;
+  color: #ffffff;
+  border: 3px solid #1a1a1a;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.reset-btn:active {
+  background-color: #b81916;
+}
